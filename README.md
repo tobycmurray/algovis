@@ -4,7 +4,8 @@ Algovis is a rudimentary tool designed to enable the interactive
 visualisation of simple algorithms implemented in Python, via Jupyter
 Notebooks.
 
-See the [documentation](https://tobycmurray.github.io/algovis/algovis-doc.html).
+See the [documentation](https://tobycmurray.github.io/algovis/algovis-doc.html)
+for instructions on how to download and use it.
 
 ## Credits
 
