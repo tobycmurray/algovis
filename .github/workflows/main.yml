@@ -1,0 +1,37 @@
+name: Build and Test Docker Image
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Build and Run Docker container
+      run: |
+        docker build -t my-project-image .
+        docker run my-project-image make
+
+    - name: Publish Status
+      if: ${{ always() }}
+      uses: actions/github-script@v4
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        script: |
+          const state = process.exitCode === 0 ? 'success' : 'failure';
+          const description = state === 'success' ? 'Build succeeded' : 'Build failed';
+          const contextStr = 'Docker Build and Test';
+          github.repos.createCommitStatus({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            sha: context.sha,
+            state: state,
+            description: description,
+            context: contextStr
+          });

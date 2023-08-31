@@ -1,5 +1,8 @@
 # Algovis
 
+[![Build and Test Docker Image](https://github.com/tobycmurray/algovis/actions/workflows/main.yml/badge.svg)](https://github.com/tobycmurray/algovis/actions/workflows/main.yml)
+[![Deploy to GitHub Pages](https://github.com/tobycmurray/algovis/actions/workflows/github-pages.yml/badge.svg)](https://github.com/tobycmurray/algovis/actions/workflows/github-pages.yml)
+
 Algovis is a rudimentary tool designed to enable the interactive
 visualisation of simple algorithms implemented in Python, via Jupyter
 Notebooks.
